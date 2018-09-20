@@ -9,5 +9,13 @@ exports.getOrder = function(req, res) {
       res.send(err);
     });
 };
-
+exports.createOrder = function(req, res) {
+  db.Order.create(req.body)
+    .then(function(saved) {
+      res.status(201).json(saved);
+    })
+    .catch(function(err) {
+      res.send(err);
+    });
+};
 module.exports = exports;
