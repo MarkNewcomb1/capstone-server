@@ -1,6 +1,6 @@
 const express = require("express"),
   app = express(),
-  port = process.env.PORT || 8000,
+  port = parseInt(process.env.PORT || 8000),
   bodyParser = require("body-parser"),
   cors = require("cors"),
   // Order = require("./models/order"),
