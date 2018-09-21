@@ -8,13 +8,12 @@ const express = require("express"),
 
 const Order = require('./models/order');  
 var mongodb = require("mongodb");
+const mongoose = require('mongoose')
 
 
-mongodb.MongoClient.connect(process.env.DATABASE_URL, function (err, database) {
-  if (err) {
-    console.log(err);
-    process.exit(1);
-  }});
+mongoose.connect(
+  process.env.DATABASE_URL, 
+  { useNewUrlParser: true });
 
 //   // Save database object from the callback for reuse.
 //   db = database;
